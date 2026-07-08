@@ -427,3 +427,9 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Node/Nest
+/dist
+/coverage
+/.nyc_output
+.DS_Store
