@@ -29,6 +29,7 @@ jobs:
     - name: push docker image 
       run : |
         docker push kevin2402/docker-graphql:0.0.2
+        docker push kevin2402/docker-graphql:${GITHUB_SHA}
     
       
        
