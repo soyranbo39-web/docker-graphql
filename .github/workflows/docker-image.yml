@@ -22,9 +22,15 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         PASSWORD_DOCK: ${{ secrets.PASSWORD_DOCK}}
       run: |
-        echo "Iniciando login "
         docker login -u $DOCKER_USER -p $PASSWORD_DOCK
-        echo "fin del login "
+    - name: build docker image 
+      run : |
+        docker build -t kevin2402/docker-graphql:0.0.2  .
+    - name: push docker image 
+      run : |
+        docker push kevin2402/docker-graphql:0.0.2
+    
+      
        
 
     # - name: Build the Docker image
