@@ -22,7 +22,7 @@ jobs:
       with:
         major_pattern: "major : "
         minor_pattern: "minor : "
-        format: "${major}.${minor}.${patch}-perelease$-{increment}"
+        format: "${major}.${minor}.${patch}-prerelease.${increment}"
       id: version 
 
     - name: docker login 
@@ -39,7 +39,7 @@ jobs:
       run : |
         docker build -t kevin2402/docker-graphql:$NEW_VERSION  .
         docker build -t kevin2402/docker-graphql:${NEW_VERSION}-latest  .
-        
+
     - name: push docker image 
       env :
         NEW_VERSION: ${{ steps.version.outputs.version }}
